@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="36dp"
+    android:layout_gravity="center_vertical"
+    android:layout_marginLeft="6dp"
+    android:layout_marginRight="6dp"
+    android:layout_weight="1"
+    android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:text="ceshi"
+        android:layout_marginLeft="3dp"
+        android:layout_marginRight="3dp"
+        android:textSize="14sp" />
+    <!--<TextView-->
+    <!--android:id="@+id/content"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:textStyle="bold"-->
+    <!--android:textColor="@color/colorAccent"/>-->
+    <!--<EditText-->
+        <!--android:id="@+id/context"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:visibility="visible"-->
+        <!--/>-->
+    <Spinner
+        android:id="@+id/spinner"
+        android:background="@drawable/edittextstyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:textSize="14sp"
+        />
+
+</LinearLayout>

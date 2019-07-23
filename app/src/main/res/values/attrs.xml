@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="SpinnerView">
+        <attr name="spinnertitle" format="string"/>
+    </declare-styleable>
+    <declare-styleable name="ScannerView">
+        <attr name="scannertitle" format="string"/>
+        <attr name="scannerhint" format="string"/>
+        <attr name="scannerbuttonname" format="string"/>
+        <attr name="buttonvisable" format="boolean"/>
+    </declare-styleable>
+    <declare-styleable name="EdittextView">
+        <attr name="edittexttitle" format="string"/>
+        <attr name="edittexthint" format="string"/>
+    </declare-styleable>
+    <declare-styleable name="TextshowView">
+        <attr name="textshowtitle" format="string"/>
+    </declare-styleable>
+    <declare-styleable name="NumberView">
+        <attr name="numbertitle" format="string"/>
+        <attr name="numberhint" format="string"/>
+        <attr name="numberdefult" format="string"/>
+    </declare-styleable>
+    <declare-styleable name="HeaderTitle">
+        <attr name="headertitle" format="string"/>
+        <attr name="headerbuttonname" format="string"/>
+        <attr name="headerbuttonvisable" format="boolean"/>
+    </declare-styleable>
+
+    <!--tablelayout-->
+    <declare-styleable name="TableLayout">
+        <attr name="tableMode" format="enum">
+            <enum name="auto" value="0" />
+            <enum name="equallyDivide" value="1" />
+        </attr>
+        <attr name="tableRowHeight" format="dimension" />
+        <attr name="tableDividerSize" format="dimension" />
+        <attr name="tableDividerColor" format="color" />
+        <attr name="tableColumnPadding" format="dimension" />
+        <attr name="tableTextGravity" format="enum">
+            <enum name="center" value="0" />
+            <enum name="leftCenter" value="1" />
+            <enum name="rightCenter" value="2" />
+        </attr>
+        <attr name="tableTextSize" format="dimension" />
+        <attr name="tableTextColor" format="color" />
+        <attr name="tableTextColorSelected" format="color" />
+        <attr name="backgroundColorSelected" format="color" />
+        <attr name="headerColor" format="color" />
+    </declare-styleable>
+</resources>

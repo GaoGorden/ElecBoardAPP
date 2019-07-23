@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#6CA6CD</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+
+    <color name="head_bg">#663300</color>
+    <color name="blue">#33b5e5</color>
+    <color name="SkyBlue">#4876FF</color><!--天兰色 -->
+
+    <color name="pandianzhong">#228B22</color>
+    <color name="busy">#DC143C</color>
+    <color name="deepgrey">#DCDCDC</color>
+    <color name="background">#FFFFFF</color>
+    <color name="edittextcolor">#B0C4DE</color>
+
+    <color name="text_color1">#000000</color>
+    <color name="text_color2">#ffffff</color>
+</resources>

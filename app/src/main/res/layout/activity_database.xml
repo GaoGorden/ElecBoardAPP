@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <p.gordenyou.elecboardapp.view.HeaderTitle
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:headertitle="数据库使用情况"/>
+    <p.gordenyou.elecboardapp.view.View_BarChart_Database
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</LinearLayout>

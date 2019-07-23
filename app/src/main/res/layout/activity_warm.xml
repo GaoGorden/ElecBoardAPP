@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+    <p.gordenyou.elecboardapp.view.HeaderTitle
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:headertitle="预警信息"/>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:textSize="16sp"
+                android:textColor="#000000"
+                android:text="安全库存预警"/>
+            <p.gordenyou.elecboardapp.view.View_GaugeChart
+                android:layout_width="match_parent"
+                android:layout_height="200dp" />
+
+            <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:layout_gravity="center"-->
+                <!--android:textSize="16sp"-->
+                <!--android:textColor="@color/colorPrimary"-->
+                <!--android:text="呆料预警"/>-->
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingLeft="16dp"
+                android:paddingTop="16dp"
+                android:paddingRight="16dp"
+                android:paddingBottom="16dp">
+                <FrameLayout
+                    android:layout_width="600dp"
+                    android:layout_height="440dp"
+                    android:layout_centerInParent="true">
+
+
+                    <p.gordenyou.elecboardapp.view.View_BarChartScroll_left
+                        android:id="@+id/slack_view"
+                        android:layout_width="350dp"
+                        android:layout_height="500dp"
+                        android:layout_gravity="left" />
+
+
+                    <HorizontalScrollView
+                        android:layout_width="wrap_content"
+                        android:layout_height="440dp"
+                        android:layout_marginRight="0dp"
+                        android:layout_marginLeft="35dp"
+                        android:fadingEdge="none"
+                        android:scrollbars="none">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+
+                            <p.gordenyou.elecboardapp.view.View_BarChartScroll
+                                android:id="@+id/slack_chart"
+                                android:layout_width="450dp"
+                                android:layout_height="500dp" />
+
+                        </LinearLayout>
+                    </HorizontalScrollView>
+
+                </FrameLayout>
+            </RelativeLayout>
+
+
+
+            <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:layout_gravity="center"-->
+                <!--android:textColor="@color/colorPrimary"-->
+                <!--android:textSize="16sp"-->
+                <!--android:text="过期物料预警"/>-->
+
+            <!--<RelativeLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:paddingLeft="16dp"-->
+                <!--android:paddingTop="16dp"-->
+                <!--android:paddingRight="16dp"-->
+                <!--android:paddingBottom="16dp">-->
+                <!--<FrameLayout-->
+                    <!--android:layout_width="600dp"-->
+                    <!--android:layout_height="500dp">-->
+
+
+                    <!--<p.gordenyou.elecboardapp.view.View_BarChartScroll_left-->
+                        <!--android:id="@+id/overtime_view"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="500dp"-->
+                        <!--android:layout_gravity="left" />-->
+
+
+                    <!--<HorizontalScrollView-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="500dp"-->
+                        <!--android:layout_marginLeft="0dp"-->
+                        <!--android:layout_marginRight="0dp"-->
+                        <!--android:fadingEdge="none"-->
+                        <!--android:scrollbars="none">-->
+
+                        <!--<LinearLayout-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:orientation="horizontal">-->
+
+
+                            <!--<p.gordenyou.elecboardapp.view.View_BarChartScroll-->
+                                <!--android:id="@+id/overtime_chart"-->
+                                <!--android:layout_marginLeft="20dp"-->
+                                <!--android:layout_width="450dp"-->
+                                <!--android:layout_height="500dp" />-->
+
+                        <!--</LinearLayout>-->
+                    <!--</HorizontalScrollView>-->
+
+                <!--</FrameLayout>-->
+            <!--</RelativeLayout>-->
+
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
