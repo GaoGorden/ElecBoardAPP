@@ -2,9 +2,6 @@ package com.smile.calendar.holder;
 
 import android.view.View;
 
-/**
- * Created by Blaz Solar on 16/04/14.
- */
 public abstract class AbstractViewHolder {
 
     private View view;

@@ -76,6 +76,8 @@ public class View_BarChartScroll_left extends GraphicalView {
 				chart.setCategories(chartLabels);
 				chart.setCustomLines(mCustomLineDataset);
 
+				chart.getPlotTitle().getTitlePaint().setTextSize(36);
+				chart.getPlotLegend().getPaint().setTextSize(26);//改变图例字体大小
 				//图例
 				chart.getAxisTitle().setLeftTitle("呆料明细");
 
@@ -85,7 +87,7 @@ public class View_BarChartScroll_left extends GraphicalView {
 				chart.getDataAxis().setAxisMin(0);
 				chart.getDataAxis().setAxisSteps(1);
 				//指隔多少个轴刻度(即细刻度)后为主刻度
-				chart.getDataAxis().setDetailModeSteps(2);
+				chart.getDataAxis().setDetailModeSteps(1);
 
 				//定义数据轴标签显示格式
 				chart.getDataAxis().setLabelFormatter(new IFormatterTextCallBack(){
@@ -101,10 +103,10 @@ public class View_BarChartScroll_left extends GraphicalView {
 
 				});
 
-				chart.getDataAxis().hideAxisLine();
+//				chart.getDataAxis().hideAxisLine();
 
 				//隐藏Key
-				chart.getPlotLegend().hide();
+//				chart.getPlotLegend().hide();
 				chart.getCategoryAxis().hide();
 
 			} catch (Exception e) {
@@ -123,10 +125,19 @@ public class View_BarChartScroll_left extends GraphicalView {
 			dataColorA.add(Color.RED);
 
 			//此地的颜色为Key值颜色及柱形的默认颜色
-			BarData BarDataA = new BarData("",dataSeriesA,dataColorA,
-											Color.rgb(53, 169, 239));
+			BarData BarDataA = new BarData("适中",dataSeriesA,dataColorA,
+					Color.rgb(77, 184, 73));
+			BarData BarDataB = new BarData("超重",dataSeriesA,dataColorA,
+					Color.rgb(252, 210, 9));
+			BarData BarDataC = new BarData("偏胖",dataSeriesA,dataColorA,
+					Color.rgb(171, 42, 96));
+			BarData BarDataD = new BarData("肥胖",dataSeriesA,dataColorA,
+					Color.RED);
 
 			chartData.add(BarDataA);
+			chartData.add(BarDataB);
+			chartData.add(BarDataC);
+			chartData.add(BarDataD);
 		}
 
 		private void chartLabels()
@@ -158,7 +169,7 @@ public class View_BarChartScroll_left extends GraphicalView {
 	        		this.getLayoutParams().width - 10,
 	        		 this.getLayoutParams().height - 10);
 	        //top,bottom,左右两图要一致，留70px空间用于显示左轴
-	        chart.setPadding(70,120,0, 180);	//70是轴所点总宽度，在右边轴绘图时，偏移这个宽度就对好了
+	        chart.setPadding(70,130,0, 16);	//70是轴所点总宽度，在右边轴绘图时，偏移这个宽度就对好了
 
             chart.render(canvas);
 

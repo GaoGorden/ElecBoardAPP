@@ -49,34 +49,48 @@
             android:textSize="8sp"
             android:visibility="gone" />
 
-        <com.smile.calendar.view.DayView
-            android:id="@+id/schedule1"
-            style="@style/day_schedule_style"
+        <TextView
+            android:id="@+id/warmview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_below="@+id/tvChina"
-            android:background="@color/trans_cal_color_red"
-            android:text="schedule2啊啊啊土大土大" />
+            android:layout_centerInParent="true"
+            android:layout_margin="4dp"
+            android:background="@color/colorPrimary"
+            android:gravity="center"
+            android:visibility="gone"
+            android:text="有计划"
+            android:textColor="@color/white"
+            android:textSize="8sp" />
 
-        <com.smile.calendar.view.DayView
-            android:id="@+id/schedule2"
-            style="@style/day_schedule_style"
-            android:layout_below="@+id/schedule1"
-            android:background="@color/trans_cal_color_point_blue"
-            android:text="schedule2dddddddddddd"
-            android:ellipsize="none"/>
+        <!--<com.smile.calendar.view.DayView-->
+        <!--android:id="@+id/schedule1"-->
+        <!--style="@style/day_schedule_style"-->
+        <!--android:layout_below="@+id/tvChina"-->
+        <!--android:background="@color/trans_cal_color_red"-->
+        <!--android:text="schedule2啊啊啊土大土大" />-->
 
-        <com.smile.calendar.view.DayView
-            android:id="@+id/schedule3"
-            style="@style/day_schedule_style"
-            android:layout_below="@+id/schedule2"
-            android:background="@color/trans_cal_color_red"
-            android:text="schedule2dddddddddddd" />
+        <!--<com.smile.calendar.view.DayView-->
+        <!--android:id="@+id/schedule2"-->
+        <!--style="@style/day_schedule_style"-->
+        <!--android:layout_below="@+id/schedule1"-->
+        <!--android:background="@color/trans_cal_color_point_blue"-->
+        <!--android:text="schedule2dddddddddddd"-->
+        <!--android:ellipsize="none"/>-->
 
-        <com.smile.calendar.view.DayView
-            android:id="@+id/schedule4"
-            style="@style/day_schedule_style"
-            android:layout_below="@+id/schedule3"
-            android:background="@color/trans_cal_color_point_blue"
-            android:text="schedule2dddddddddddd" />
+        <!--<com.smile.calendar.view.DayView-->
+        <!--android:id="@+id/schedule3"-->
+        <!--style="@style/day_schedule_style"-->
+        <!--android:layout_below="@+id/schedule2"-->
+        <!--android:background="@color/trans_cal_color_red"-->
+        <!--android:text="schedule2dddddddddddd" />-->
+
+        <!--<com.smile.calendar.view.DayView-->
+        <!--android:id="@+id/schedule4"-->
+        <!--style="@style/day_schedule_style"-->
+        <!--android:layout_below="@+id/schedule3"-->
+        <!--android:background="@color/trans_cal_color_point_blue"-->
+        <!--android:text="schedule2dddddddddddd" />-->
 
     </RelativeLayout>
 

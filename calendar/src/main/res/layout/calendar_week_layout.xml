@@ -3,8 +3,7 @@
 <com.smile.calendar.view.WeekView
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:paddingBottom="2dp">
+    android:layout_height="wrap_content">
 
     <include layout="@layout/calendar_day_layout" />
     <include layout="@layout/calendar_day_layout" />

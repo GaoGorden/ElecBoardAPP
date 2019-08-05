@@ -3,13 +3,9 @@ package com.smile.calendar.view;
 import android.content.Context;
 import android.support.v7.widget.AppCompatTextView;
 import android.util.AttributeSet;
-import android.widget.TextView;
 
 import com.smile.calendar.R;
 
-/**
- * Created by Blaz Solar on 24/05/14.
- */
 public class DayView extends AppCompatTextView {
 
     private static final int[] STATE_CURRENT = { R.attr.state_current };

@@ -43,10 +43,6 @@ import java.util.Locale;
 
 import static com.alamkanak.weekview.WeekViewUtil.*;
 
-/**
- * Created by Raquib-ul-Alam Kanak on 7/21/2014.
- * Website: http://alamkanak.github.io/
- */
 public class WeekView extends View {
 
     private enum Direction {

@@ -7,9 +7,6 @@ import org.joda.time.DateTimeConstants;
 import org.joda.time.Days;
 import org.joda.time.LocalDate;
 
-/**
- * Created by Blaz Solar on 24/05/14.
- */
 public abstract class RangeUnit extends CalendarUnit {
 
     @Nullable private LocalDate mMinDate;

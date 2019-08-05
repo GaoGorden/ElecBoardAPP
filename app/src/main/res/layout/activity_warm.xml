@@ -38,13 +38,13 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:paddingLeft="16dp"
                 android:paddingTop="16dp"
                 android:paddingRight="16dp"
                 android:paddingBottom="16dp">
+
                 <FrameLayout
-                    android:layout_width="600dp"
-                    android:layout_height="440dp"
+                    android:layout_width="700dp"
+                    android:layout_height="600dp"
                     android:layout_centerInParent="true">
 
 
@@ -57,9 +57,9 @@
 
                     <HorizontalScrollView
                         android:layout_width="wrap_content"
-                        android:layout_height="440dp"
+                        android:layout_height="500dp"
+                        android:layout_marginLeft="37dp"
                         android:layout_marginRight="0dp"
-                        android:layout_marginLeft="35dp"
                         android:fadingEdge="none"
                         android:scrollbars="none">
 

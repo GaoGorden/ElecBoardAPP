@@ -1,19 +1,13 @@
 package com.smile.calendar.util;
 
 import android.support.annotation.IntDef;
-import android.support.annotation.NonNull;
 
 import org.joda.time.DateTimeConstants;
 import org.joda.time.LocalDate;
-import org.joda.time.format.DateTimeFormat;
-import org.joda.time.format.DateTimeFormatter;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 
-/**
- * Created by Blaz Solar on 27/02/14.
- */
 public abstract class CalendarUnit {
 
     @IntDef({ TYPE_WEEK, TYPE_MONTH })

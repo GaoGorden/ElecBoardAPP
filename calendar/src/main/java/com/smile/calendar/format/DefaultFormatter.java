@@ -10,8 +10,6 @@ import org.joda.time.format.DateTimeFormatter;
 
 /**
  * 默认日期格式化
- * @author zhaojun (Email:laobadaozjj@gmail.com)
- *
  */
 public class DefaultFormatter implements Formatter {
 

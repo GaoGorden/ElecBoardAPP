@@ -1,8 +1,5 @@
 package com.smile.calendar.holder;
 
-/**
- * Created by Blaz Solar on 22/04/14.
- */
 public class StubViewHolder extends AbstractViewHolder {
 
     @Override

@@ -2,7 +2,7 @@
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="30dp"
+    android:layout_height="wrap_content"
     android:background="@drawable/bg_btn_calendar"
     android:gravity="center"
     android:orientation="vertical"
@@ -11,7 +11,7 @@
 
     <RelativeLayout
         android:layout_width="wrap_content"
-        android:layout_height="match_parent"
+        android:layout_height="60dp"
         android:layout_gravity="center_horizontal">
 
         <View
@@ -36,8 +36,9 @@
             android:id="@+id/tvDayView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="3dp"
             android:layout_below="@id/tv_day_type"
-            android:layout_centerHorizontal="true"
+            android:layout_alignParentLeft="true"
             android:textColor="@color/text_calendar"
             android:textSize="14sp" />
 
@@ -50,6 +51,20 @@
             android:textColor="@color/text_calendar"
             android:textSize="8sp"
             android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/warmview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvChina"
+            android:layout_centerInParent="true"
+            android:layout_margin="4dp"
+            android:background="@color/colorPrimary"
+            android:gravity="center"
+            android:visibility="visible"
+            android:text="有计划"
+            android:textColor="@color/white"
+            android:textSize="8sp" />
 
 
     </RelativeLayout>

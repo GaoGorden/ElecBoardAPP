@@ -5,7 +5,6 @@ import io.realm.annotations.PrimaryKey;
 
 /**
  * 保存每个模块的最早请求时间和最晚请求时间
- * Created by SmileXie on 2017/8/2.
  */
 
 public class ModelTime extends RealmObject {

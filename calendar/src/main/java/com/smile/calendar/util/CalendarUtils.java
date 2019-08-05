@@ -24,7 +24,6 @@ import java.util.Map;
 
 /**
  * 日程事件
- * Created by Jimmy on 2016/10/6 0006. modified by xwf
  */
 public class CalendarUtils {
 

@@ -5,9 +5,6 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
 
-/**
- * Created by Blaz Solar on 24/02/14.
- */
 public class WeekViewWithSchedule extends ViewGroup {
 
     private int extraPX;

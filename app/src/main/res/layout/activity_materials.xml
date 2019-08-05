@@ -1,138 +1,162 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
-    <p.gordenyou.elecboardapp.view.HeaderTitle
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:headertitle="库存可用物料统计查询"/>
 
-    <ScrollView
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-        <LinearLayout
+        <p.gordenyou.elecboardapp.view.HeaderTitle
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <RadioGroup
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:layout_marginTop="16dp"
-                android:layout_marginRight="32dp"
-                android:layout_marginLeft="32dp"
-                android:layout_marginBottom="16dp"
-                android:orientation="horizontal">
+            app:headertitle="库存可用物料统计" />
 
-                <RadioButton
-                    android:id="@+id/btn1"
-                    android:layout_width="0dp"
-                    android:layout_height="35dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/radiobutton_background"
-                    android:button="@null"
-                    android:gravity="center"
-                    android:text="星期"
-                    android:textColor="@color/radiobutton_textcolor"
-                    android:textSize="14sp" />
+        <android.support.design.widget.BottomNavigationView
+            android:id="@+id/materials_top"
+            android:layout_width="match_parent"
+            android:layout_height="90sp"
+            android:layout_gravity="center"
+            android:textAlignment="center"
+            android:visibility="visible"
+            app:labelVisibilityMode="labeled"
+            app:itemTextColor="@color/selector_black"
+            app:menu="@menu/menu_materials" />
+    </RelativeLayout>
 
-                <RadioButton
-                    android:id="@+id/btn2"
-                    android:layout_width="0dp"
-                    android:layout_height="35dp"
-                    android:layout_marginStart="10dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/radiobutton_background"
-                    android:button="@null"
-                    android:gravity="center"
-                    android:text="月"
-                    android:textColor="@color/radiobutton_textcolor"
-                    android:textSize="14sp"
-                    android:layout_marginLeft="10dp" />
 
-                <RadioButton
-                    android:id="@+id/btn3"
-                    android:layout_width="0dp"
-                    android:layout_height="35dp"
-                    android:layout_marginStart="10dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/radiobutton_background"
-                    android:button="@null"
-                    android:gravity="center"
-                    android:text="季度"
-                    android:textColor="@color/radiobutton_textcolor"
-                    android:textSize="14sp"
-                    android:layout_marginLeft="10dp" />
+    <android.support.v4.view.ViewPager
+        android:id="@+id/materials_viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="10" />
 
-            </RadioGroup>
 
-            <p.gordenyou.elecboardapp.view.View_PieChart
-                android:id="@+id/materials_view"
-                android:layout_width="match_parent"
-                android:layout_marginBottom="16dp"
-                android:layout_height="400dp"/>
+    <!--<ScrollView-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content">-->
+    <!--<LinearLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:orientation="vertical">-->
+    <!--<RadioGroup-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:gravity="center"-->
+    <!--android:layout_marginTop="16dp"-->
+    <!--android:layout_marginRight="32dp"-->
+    <!--android:layout_marginLeft="32dp"-->
+    <!--android:layout_marginBottom="16dp"-->
+    <!--android:orientation="horizontal">-->
 
-            <LinearLayout
-                android:id="@+id/zcjy_linearlayout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
+    <!--<RadioButton-->
+    <!--android:id="@+id/btn1"-->
+    <!--android:layout_width="0dp"-->
+    <!--android:layout_height="35dp"-->
+    <!--android:layout_weight="1"-->
+    <!--android:background="@drawable/radiobutton_background"-->
+    <!--android:button="@null"-->
+    <!--android:gravity="center"-->
+    <!--android:text="星期"-->
+    <!--android:textColor="@color/radiobutton_textcolor"-->
+    <!--android:textSize="14sp" />-->
 
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="@color/colorAccent" />
+    <!--<RadioButton-->
+    <!--android:id="@+id/btn2"-->
+    <!--android:layout_width="0dp"-->
+    <!--android:layout_height="35dp"-->
+    <!--android:layout_marginStart="10dp"-->
+    <!--android:layout_weight="1"-->
+    <!--android:background="@drawable/radiobutton_background"-->
+    <!--android:button="@null"-->
+    <!--android:gravity="center"-->
+    <!--android:text="月"-->
+    <!--android:textColor="@color/radiobutton_textcolor"-->
+    <!--android:textSize="14sp"-->
+    <!--android:layout_marginLeft="10dp" />-->
 
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:orientation="horizontal">
+    <!--<RadioButton-->
+    <!--android:id="@+id/btn3"-->
+    <!--android:layout_width="0dp"-->
+    <!--android:layout_height="35dp"-->
+    <!--android:layout_marginStart="10dp"-->
+    <!--android:layout_weight="1"-->
+    <!--android:background="@drawable/radiobutton_background"-->
+    <!--android:button="@null"-->
+    <!--android:gravity="center"-->
+    <!--android:text="季度"-->
+    <!--android:textColor="@color/radiobutton_textcolor"-->
+    <!--android:textSize="14sp"-->
+    <!--android:layout_marginLeft="10dp" />-->
 
-                    <TextView
-                        android:id="@+id/materials_tablename"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal"
-                        android:textColor="@color/colorPrimary" />
+    <!--</RadioGroup>-->
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal"
-                        android:text="明细表"
-                        android:textColor="@color/colorPrimary" />
-                </LinearLayout>
+    <!--<p.gordenyou.elecboardapp.view.View_PieChart-->
+    <!--android:id="@+id/materials_view"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_marginBottom="16dp"-->
+    <!--android:layout_height="400dp"/>-->
 
-                <tableLayout.FreeScrollView
-                    android:layout_width="match_parent"
-                    android:layout_height="240dp">
+    <!--<LinearLayout-->
+    <!--android:id="@+id/zcjy_linearlayout"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:orientation="vertical">-->
 
-                    <tableLayout.TableLayout
-                        android:id="@+id/zcjy_table"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:background="@android:color/white"
-                        app:backgroundColorSelected="@color/colorAccent"
-                        app:headerColor="@color/colorPrimary"
-                        app:tableColumnPadding="8dp"
-                        app:tableDividerColor="#ddd"
-                        app:tableDividerSize="1dp"
-                        app:tableRowHeight="30dp"
-                        app:tableTextColor="#333"
-                        app:tableTextColorSelected="#fff"
-                        app:tableTextSize="14dp" />
+    <!--<ImageView-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="1dp"-->
+    <!--android:background="@color/colorAccent" />-->
 
-                </tableLayout.FreeScrollView>
+    <!--<LinearLayout-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_gravity="center_horizontal"-->
+    <!--android:orientation="horizontal">-->
 
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="@color/colorAccent" />
-            </LinearLayout>
-        </LinearLayout>
-    </ScrollView>
+    <!--<TextView-->
+    <!--android:id="@+id/materials_tablename"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_gravity="center_horizontal"-->
+    <!--android:textColor="@color/colorPrimary" />-->
+
+    <!--<TextView-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_gravity="center_horizontal"-->
+    <!--android:text="明细表"-->
+    <!--android:textColor="@color/colorPrimary" />-->
+    <!--</LinearLayout>-->
+
+    <!--<tableLayout.FreeScrollView-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="240dp">-->
+
+    <!--<tableLayout.TableLayout-->
+    <!--android:id="@+id/zcjy_table"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:background="@android:color/white"-->
+    <!--app:backgroundColorSelected="@color/colorAccent"-->
+    <!--app:headerColor="@color/colorPrimary"-->
+    <!--app:tableColumnPadding="8dp"-->
+    <!--app:tableDividerColor="#ddd"-->
+    <!--app:tableDividerSize="1dp"-->
+    <!--app:tableRowHeight="30dp"-->
+    <!--app:tableTextColor="#333"-->
+    <!--app:tableTextColorSelected="#fff"-->
+    <!--app:tableTextSize="14dp" />-->
+
+    <!--</tableLayout.FreeScrollView>-->
+
+    <!--<ImageView-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="1dp"-->
+    <!--android:background="@color/colorAccent" />-->
+    <!--</LinearLayout>-->
+    <!--</LinearLayout>-->
+    <!--</ScrollView>-->
 
 </LinearLayout>

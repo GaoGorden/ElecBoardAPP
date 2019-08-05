@@ -5,12 +5,10 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
 
-/**
- * Created by Blaz Solar on 24/02/14.
- */
 public class WeekView extends ViewGroup {
 
     private static final String TAG = "WeekView";
+    private int extra = 20;
 
     public WeekView(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -57,7 +55,7 @@ public class WeekView extends ViewGroup {
 
         }
 
-        setMeasuredDimension(widthSize, getLayoutParams().height >= 0 ? getLayoutParams().height : baseSize + getPaddingBottom() + getPaddingTop());
+        setMeasuredDimension(widthSize, getLayoutParams().height >= 0 ? getLayoutParams().height : baseSize + getPaddingBottom() + getPaddingTop() + extra);
 
     }
 
@@ -79,7 +77,7 @@ public class WeekView extends ViewGroup {
             int childWidth = child.getMeasuredWidth();
 
             int x = i * part + ((part - childWidth) / 2);
-            child.layout(x, 0, x + childWidth, child.getMeasuredHeight());
+            child.layout(x, 0, x + childWidth, child.getMeasuredHeight() + extra);
 
         }
 

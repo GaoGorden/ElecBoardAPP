@@ -10,9 +10,6 @@ import org.joda.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by Blaz Solar on 24/02/14.
- */
 public class Week extends RangeUnit {
 
     @NonNull private final List<Day> mDays = new ArrayList<Day>(7);

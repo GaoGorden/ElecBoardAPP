@@ -3,9 +3,6 @@ package com.smile.calendar.holder;
 import android.view.View;
 import android.view.ViewGroup;
 
-/**
- * Created by Blaz Solar on 17/04/14.
- */
 public class SizeViewHolder extends AbstractViewHolder {
 
     private int mMinHeight;

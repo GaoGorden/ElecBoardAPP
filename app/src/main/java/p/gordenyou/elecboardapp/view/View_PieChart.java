@@ -92,7 +92,7 @@ public class View_PieChart extends DemoView implements Runnable {
         try {
             //标签显示(隐藏，显示在中间，显示在扇区外面,折线注释方式)
             chart.setLabelStyle(XEnum.SliceLabelStyle.BROKENLINE);
-            chart.getLabelBrokenLine().setLinePointStyle(XEnum.LabelLinePoint.END);
+            chart.getLabelBrokenLine().setLinePointStyle(XEnum.LabelLinePoint.BEGIN);
             chart.syncLabelColor();
             chart.syncLabelPointColor();
 
@@ -113,7 +113,11 @@ public class View_PieChart extends DemoView implements Runnable {
             //标题
             chart.setTitle("物料占比");
             chart.addSubtitle("(物料按照类型分类)");
-            chart.getPlotTitle().getTitlePaint().setTextSize(16);
+            chart.getPlotTitle().getTitlePaint().setTextSize(36);//标题字体大小
+            chart.getLabelPaint().setTextSize(26);//图中说明字体的大小
+//            chart.getFocusPaint().setTextSize(26);
+            chart.getPlotLegend().getPaint().setTextSize(26);//改变图例字体大小
+//            chart.getDyLegend().getBorderPaint().setTextSize(26);
             //chart.setTitleVerticalAlign(XEnum.VerticalAlign.MIDDLE);
 
             //隐藏渲染效果

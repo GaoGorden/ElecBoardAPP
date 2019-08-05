@@ -7,9 +7,6 @@ import com.smile.calendar.holder.AbstractViewHolder;
 import com.smile.calendar.holder.SizeViewHolder;
 import com.smile.calendar.view.CollapseCalendarView;
 
-/**
- * Created by Blaz Solar on 17/04/14.
- */
 public abstract class ProgressManager {
 
     private static final String TAG = "ProgressManager";

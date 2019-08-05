@@ -1,18 +1,15 @@
 package com.smile.calendar.module;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import org.joda.time.LocalDate;
-
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 
 import com.smile.calendar.util.RangeUnit;
 
-/**
- * Created by Blaz Solar on 24/02/14.
- */
+import org.joda.time.LocalDate;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class Month extends RangeUnit {
 
     @NonNull private final List<Week> mWeeks = new ArrayList<Week>();

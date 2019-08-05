@@ -11,9 +11,15 @@ import com.smile.calendar.view.CollapseCalendarView;
 
 import org.joda.time.LocalDate;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import p.gordenyou.elecboardapp.R;
+import p.gordenyou.elecboardapp.adapter.ScheduleAdapter;
+import p.gordenyou.elecboardapp.unity.Event;
 
 public class PlanActivity extends Activity {
 
@@ -24,22 +30,25 @@ public class PlanActivity extends Activity {
     @BindView(R.id.plan_datetime)
     TextView datetime;
 
+    CollapseCalendarView calendarView1;
+
     private LocalDate selectedDate;//当前选择的日期
     private boolean weekchanged = false;//是否切换了周号
     private CalendarManager mManager;
-//    private HashMap<Integer, List<Event>> eventMap;
+    private ScheduleAdapter scheduleAdapter;
+    private HashMap<String, List<Event>> eventMap;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        CollapseCalendarView.withMonthSchedule = false;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_plan);
         ButterKnife.bind(this);
 
-        CollapseCalendarView.withMonthSchedule = true;
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-//        scheduleAdapter = new ScheduleAdapter(this);
-//        recyclerView.setAdapter(scheduleAdapter);
-//        eventMap = new HashMap<>();
+        scheduleAdapter = new ScheduleAdapter(this);
+        recyclerView.setAdapter(scheduleAdapter);
+        eventMap = new HashMap<>();
         initCalendarListener();
 //        ActionBar actionBar = getSupportActionBar();
 //        if (actionBar != null) {
@@ -50,9 +59,13 @@ public class PlanActivity extends Activity {
 
     private void initCalendarListener() {
         selectedDate = LocalDate.now();
+        ArrayList<String> task  = new ArrayList<>();
+        task.add("2019-07-30");
+
+
         mManager = new CalendarManager(LocalDate.now(),
-                CalendarManager.State.MONTH, LocalDate.now().withYear(100),
-                LocalDate.now().plusYears(60));
+                CalendarManager.State.MONTH, LocalDate.now().withYear(2010),
+                LocalDate.now().plusYears(5),task);
         //月份切换监听器
         mManager.setMonthChangeListener(new CalendarManager.OnMonthChangeListener() {
 

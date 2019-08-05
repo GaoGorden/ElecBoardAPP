@@ -30,14 +30,13 @@ import org.json.JSONObject;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
 /**
  * 日历View
- *
- * @author smileXie
  */
 @SuppressLint({"SimpleDateFormat", "NewApi"})
 public class CollapseCalendarView extends LinearLayout implements View.OnClickListener {
@@ -109,7 +108,7 @@ public class CollapseCalendarView extends LinearLayout implements View.OnClickLi
         super(context, attrs, defStyle);
         weeks = getResources().getStringArray(R.array.weeks);
         mInflater = LayoutInflater.from(context);
-        mResizeManager = new ResizeManager(this, withMonthSchedule);
+        mResizeManager = new ResizeManager(this, !withMonthSchedule);//Github版本溯源的重要性！！！！一个标点符号查了一天。
         int resourceLayout = withMonthSchedule ? R.layout.calendar_month_layout_with_schedule : R.layout.calendar_month_layout;
         inflate(context, resourceLayout, this);
         setOrientation(VERTICAL);
@@ -279,13 +278,13 @@ public class CollapseCalendarView extends LinearLayout implements View.OnClickLi
     @Override
     protected void onFinishInflate() {
         super.onFinishInflate();
-        mTitleView = (TextView) findViewById(R.id.title);
+        mTitleView = findViewById(R.id.title);
         mTitleView.setOnClickListener(this);
-        mPrev = (ImageButton) findViewById(R.id.prev);
-        mNext = (ImageButton) findViewById(R.id.next);
-        mWeeksView = (LinearLayout) findViewById(R.id.weeks);
-        mHeader = (LinearLayout) findViewById(R.id.header);
-        mSelectionText = (TextView) findViewById(R.id.selection_title);
+        mPrev = findViewById(R.id.prev);
+        mNext = findViewById(R.id.next);
+        mWeeksView = findViewById(R.id.weeks);
+        mHeader = findViewById(R.id.header);
+        mSelectionText = findViewById(R.id.selection_title);
         mPrev.setOnClickListener(this);
         mNext.setOnClickListener(this);
         populateLayout();
@@ -298,7 +297,7 @@ public class CollapseCalendarView extends LinearLayout implements View.OnClickLi
         if (!initialized) {
             CalendarManager manager = getManager();
             if (manager != null) {
-                LinearLayout layout = (LinearLayout) findViewById(R.id.days);
+                LinearLayout layout = findViewById(R.id.days);
                 for (int i = 0; i < 7; i++) {
                     TextView textView = (TextView) layout.getChildAt(i);
                     textView.setText(weeks[i]);
@@ -376,17 +375,26 @@ public class CollapseCalendarView extends LinearLayout implements View.OnClickLi
         for (int i = 0; i < 7; i++) {
             final Day day = days.get(i);
             LinearLayout layout = (LinearLayout) weekView.getChildAt(i);
-            DayView dayView = (DayView) layout.findViewById(R.id.tvDayView);
-            DayView chinaDay = (DayView) layout.findViewById(R.id.tvChina);
+            DayView dayView = layout.findViewById(R.id.tvDayView);
+            DayView chinaDay = layout.findViewById(R.id.tvChina);
+            TextView warmView = layout.findViewById(R.id.warmview);
             if (showChinaDay) {
                 chinaDay.setVisibility(View.VISIBLE);
             } else {
                 chinaDay.setVisibility(View.GONE);
             }
             View viewPoint = layout.findViewById(R.id.view_point);
-            TextView tvDayType = (TextView) layout.findViewById(R.id.tv_day_type);
+            TextView tvDayType = layout.findViewById(R.id.tv_day_type);
+            ArrayList<String> task = mManager.getMtask();
+            if (task != null && !task.isEmpty()) {
+                if (task.contains(day.getDate().toString())) {
+                    warmView.setVisibility(VISIBLE);
+                } else {
+                    warmView.setVisibility(GONE);
+                }
+            }
             // 显示小蓝点标记
-            if (marksMap != null && marksMap != "") {
+            if (marksMap != null && !marksMap.equals("")) {
                 if (marksMap.contains(day.getDate().toString())) {
                     viewPoint.setVisibility(View.VISIBLE);
                 } else {
@@ -458,36 +466,33 @@ public class CollapseCalendarView extends LinearLayout implements View.OnClickLi
             boolean enables = day.isEnabled();
             dayView.setEnabled(enables);
             if (enables) { // 解除点击限制，所有的都可以点击
-                layout.setOnClickListener(new OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        LocalDate date = day.getDate();
-                        if (mManager.getState() == CalendarManager.State.MONTH) {
-                            //判断当前视图状态为月份视图
-                            if (date.getYear() > mManager.getCurrentMonthDate().getYear()) {
-                                //选中日期年份大于当前显示年份
+                layout.setOnClickListener(v -> {
+                    LocalDate date = day.getDate();
+                    if (mManager.getState() == CalendarManager.State.MONTH) {
+                        //判断当前视图状态为月份视图
+                        if (date.getYear() > mManager.getCurrentMonthDate().getYear()) {
+                            //选中日期年份大于当前显示年份
+                            next();
+                        } else if (date.getYear() < mManager.getCurrentMonthDate().getYear()) {
+                            //选中日期年份小于当前显示年份
+                            prev();
+                        } else {
+                            //选中日期年份等于当前显示年份
+                            if (date.getMonthOfYear() > mManager.getCurrentMonthDate().getMonthOfYear()) {
+                                //选中月份大于当前月份
                                 next();
-                            } else if (date.getYear() < mManager.getCurrentMonthDate().getYear()) {
-                                //选中日期年份小于当前显示年份
+                            } else if (date.getMonthOfYear() < mManager.getCurrentMonthDate().getMonthOfYear()) {
+                                //选中月份小于当前月份
                                 prev();
-                            } else {
-                                //选中日期年份等于当前显示年份
-                                if (date.getMonthOfYear() > mManager.getCurrentMonthDate().getMonthOfYear()) {
-                                    //选中月份大于当前月份
-                                    next();
-                                } else if (date.getMonthOfYear() < mManager.getCurrentMonthDate().getMonthOfYear()) {
-                                    //选中月份小于当前月份
-                                    prev();
-                                }
                             }
                         }
+                    }
 
-                        if (mManager.selectDay(date)) {
-                            populateLayout();
-                            if (mListener != null) {
-                                //执行选中回调
-                                mListener.onDateSelected(date);
-                            }
+                    if (mManager.selectDay(date)) {
+                        populateLayout();
+                        if (mListener != null) {
+                            //执行选中回调
+                            mListener.onDateSelected(date);
                         }
                     }
                 });
@@ -618,7 +623,6 @@ public class CollapseCalendarView extends LinearLayout implements View.OnClickLi
 
     /**
      * 在日历上做一组标记
-     *
      */
     public void clearMarks() {
         marksMap = "";

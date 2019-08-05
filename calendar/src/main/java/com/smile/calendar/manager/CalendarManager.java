@@ -1,7 +1,5 @@
 package com.smile.calendar.manager;
 
-import android.support.annotation.NonNull;
-
 import com.smile.calendar.format.DefaultFormatter;
 import com.smile.calendar.format.Formatter;
 import com.smile.calendar.module.Month;
@@ -11,12 +9,11 @@ import com.smile.calendar.util.RangeUnit;
 
 import org.joda.time.LocalDate;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 
 /**
  * 日历管理
- *
- * @author zhaojun (Email:laobadaozjj@gmail.com)
  */
 public class CalendarManager {
 
@@ -26,6 +23,7 @@ public class CalendarManager {
     private LocalDate mToday;
     private LocalDate mMinDate;
     private LocalDate mMaxDate;
+    private ArrayList<String> mtask;
     private Formatter formatter;
     private LocalDate mActiveMonth;
     private String monthStr = "";                //月份字符串
@@ -60,8 +58,8 @@ public class CalendarManager {
      * @param maxDate  最大日期
      */
     public CalendarManager(LocalDate selected, State state, LocalDate minDate,
-                           LocalDate maxDate) {
-        this(selected, state, minDate, maxDate, null);
+                           LocalDate maxDate, ArrayList<String> task) {
+        this(selected, state, minDate, maxDate, task, null);
     }
 
     /**
@@ -72,15 +70,20 @@ public class CalendarManager {
     }
 
     public CalendarManager(LocalDate selected, State state, LocalDate minDate,
-                           LocalDate maxDate, Formatter formatter) {
+                           LocalDate maxDate, ArrayList<String> task, Formatter formatter) {
         mToday = LocalDate.now();
         mState = state;
+        mtask = task;
         if (formatter == null) {
             this.formatter = new DefaultFormatter();
         } else {
             this.formatter = formatter;
         }
         init(selected, minDate, maxDate);
+    }
+
+    public ArrayList<String> getMtask(){
+        return mtask;
     }
 
     /**

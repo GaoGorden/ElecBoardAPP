@@ -6,9 +6,6 @@ import org.joda.time.LocalDate;
 import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
 
-/**
- * Created by Blaz Solar on 24/02/14.
- */
 public class Day {
 
     private static final DateTimeFormatter mFormatter = DateTimeFormat.forPattern("d");

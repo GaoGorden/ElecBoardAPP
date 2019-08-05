@@ -10,9 +10,7 @@ import com.smile.calendar.holder.SizeViewHolder;
 import com.smile.calendar.holder.StubViewHolder;
 import com.smile.calendar.view.CollapseCalendarView;
 
-/**
- * Created by Blaz Solar on 17/04/14.
- */
+
 public class ProgressManagerImpl extends ProgressManager {
 
     public ProgressManagerImpl(@NonNull CollapseCalendarView calendarView, int activeWeek, boolean fromMonth) {

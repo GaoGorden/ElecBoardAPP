@@ -10,9 +10,6 @@ import android.widget.Scroller;
 
 import com.smile.calendar.view.CollapseCalendarView;
 
-/**
- * Created by Blaz Solar on 17/04/14.
- */
 public class ResizeManager {
 
     public static final String TAG = "ResizeManager";
